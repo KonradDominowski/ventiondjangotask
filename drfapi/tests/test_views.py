@@ -41,7 +41,7 @@ class CategoryViewSetTestCase(APITestCase):
 
         self.assertEqual(response.status_code, 403)
 
-    def test_post_category_authenticated(self):
+    def test_post_category(self):
         view = CategoryViewSet.as_view(actions={'post': 'create'})
 
         request = self.factory.post(self.url, {
@@ -135,7 +135,7 @@ class TaskViewSetTestCase(APITestCase):
 
         self.assertEqual(response.status_code, 403)
 
-    def test_post_task_authenticated(self):
+    def test_post_task(self):
         view = TaskViewSet.as_view(actions={'post': 'create'})
 
         request = self.factory.post(self.url, {
