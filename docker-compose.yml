@@ -2,13 +2,13 @@ services:
   db:
     image: postgres
     environment:
-      - POSTGRES_DB=vention
+      - POSTGRES_DB=ventiondjangotask
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
   web:
     build: .
     environment:
-      - DB_NAME=vention
+      - DB_NAME=ventiondjangotask
       - DB_USER=postgres
       - DB_PASSWORD=postgres
       - DB_HOST=db
