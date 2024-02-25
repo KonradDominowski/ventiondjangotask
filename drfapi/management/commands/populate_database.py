@@ -75,7 +75,7 @@ class Command(BaseCommand):
                                 order=3)
 
             Task.objects.create(title="Border style",
-                                description='''Use CSS rule { border-style: dotted; } to give text an underline''',
+                                description='''Use CSS rule { border-style: dotted; } to give make border dotted''',
                                 completed=False,
                                 starter_css_code='',
                                 target="{ border-style: dotted; }",
