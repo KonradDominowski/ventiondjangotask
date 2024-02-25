@@ -13,9 +13,9 @@ The app has two models:
 
 ## API endpoints
 
-- `https://localhost:8000` -  root view of the API with links to Categories and Tasks endpoints
-- `https://localhost:8000/admin` - admin panel to manage database through Django Admin 
-- `https://localhost:8000/categories` - list of all categories
-- `https://localhost:8000/categories/{category-id}` - a detailed view of one category
-- `https://localhost:8000/tasks` - list of all tasks
-- `https://localhost:8000/tasks/{task-id}` - a detailed view of one task
+- http://localhost:8000 -  root view of the API with links to Categories and Tasks endpoints
+- http://localhost:8000/admin - admin panel to manage database through Django Admin 
+- http://localhost:8000/categories - list of all categories
+- http://localhost:8000/categories/{category-id} - a detailed view of one category
+- http://localhost:8000/tasks - list of all tasks
+- http://localhost:8000/tasks/{task-id} - a detailed view of one task
