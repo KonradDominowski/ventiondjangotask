@@ -2,11 +2,10 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from drfapi.views import CategoryViewSet, ChapterViewSet, TaskViewSet
+from drfapi.views import CategoryViewSet, TaskViewSet
 
 router = DefaultRouter()
 router.register('categories', CategoryViewSet, basename='categories')
-router.register('chapters', ChapterViewSet, basename='chapters')
 router.register('tasks', TaskViewSet, basename='tasks')
 
 urlpatterns = [

@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 
-from ..models import Category, Chapter, Task
+from ..models import Category, Task
 
 
 class Fixtures:
@@ -20,25 +20,14 @@ class Fixtures:
         return category_1, category_2
 
     @staticmethod
-    def create_two_chapters(category: Category):
-        chapter_1 = Chapter.objects.create(title='Test chapter 1',
-                                           category=category,
-                                           order=2)
-        chapter_2 = Chapter.objects.create(title='Test chapter 1',
-                                           category=category,
-                                           order=1)
-
-        return chapter_1, chapter_2
-
-    @staticmethod
-    def create_two_tasks(chapter: Chapter):
+    def create_two_tasks(category: Category):
         task_1 = Task.objects.create(title='Test task 1',
                                      description="Test task description 1",
-                                     chapter=chapter,
+                                     category=category,
                                      order=2)
         task_2 = Task.objects.create(title='Test task 2',
                                      description="Test task description 2",
-                                     chapter=chapter,
+                                     category=category,
                                      order=1)
 
         return task_1, task_2
