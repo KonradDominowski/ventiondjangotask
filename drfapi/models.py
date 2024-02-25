@@ -30,8 +30,7 @@ class Task(models.Model):
     completed = models.BooleanField(default=False)
     starter_css_code = models.TextField(verbose_name='Starter CSS code', blank=True, null=True)
     target = models.TextField(verbose_name='HTML Target')
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='tasks',
-                                 default=Category.objects.first().pk)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='tasks', blank=True)
     order = models.PositiveIntegerField(verbose_name='Task order')
 
     class Meta:
