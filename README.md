@@ -53,7 +53,7 @@ The app has two models:
    ```
 8. You can fill up the database with some dummy data using
    ```
-   python manage.py makemigrations
+   python manage.py populate_database
    ```
 
 8. You can now view the app in http://0.0.0.0:8000 in your browser.
