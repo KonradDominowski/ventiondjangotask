@@ -51,6 +51,10 @@ The app has two models:
    ```
    python manage.py createsuperuser
    ```
+8. You can fill up the database with some dummy data using
+   ```
+   python manage.py makemigrations
+   ```
 
 8. You can now view the app in http://0.0.0.0:8000 in your browser.
 
