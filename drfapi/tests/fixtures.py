@@ -42,3 +42,11 @@ class Fixtures:
                                      order=1)
 
         return task_1, task_2
+
+    @staticmethod
+    def create_user():
+        user = User.objects.create_user(username='testuser',
+                                        email='test@test.test',
+                                        password='testpassword'
+                                        )
+        return user

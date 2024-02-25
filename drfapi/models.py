@@ -9,11 +9,11 @@ class Task(models.Model):
     starter_css_code = models.TextField(verbose_name='Starter CSS code', blank=True, null=True)
     target = models.TextField(verbose_name='HTML Target')
     chapter = models.ForeignKey('Chapter', on_delete=models.CASCADE, related_name='tasks')
-    order = models.IntegerField(verbose_name='Task order')
+    order = models.PositiveIntegerField(verbose_name='Task order')
 
     class Meta:
         unique_together = ['chapter', 'order']
-        ordering = ['order']
+        ordering = ['chapter', 'order']
 
     def __repr__(self):
         return f'{self.chapter} - {self.title}'
@@ -25,11 +25,11 @@ class Task(models.Model):
 class Chapter(models.Model):
     title = models.CharField(max_length=64, verbose_name='Chapter title')
     category = models.ForeignKey('Category', on_delete=models.CASCADE, related_name='chapters')
-    order = models.IntegerField(verbose_name='Chapter order')
+    order = models.PositiveIntegerField(verbose_name='Chapter order')
 
     class Meta:
         unique_together = ['category', 'order']
-        ordering = ['order']
+        ordering = ['category', 'order']
 
     def __repr__(self):
         return f'{self.category} - {self.title}'
@@ -40,10 +40,10 @@ class Chapter(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=64, verbose_name='Category title')
-    slug = models.SlugField(max_length=64, null=False, unique=True)
+    slug = models.SlugField(max_length=64, blank=True, null=False, unique=True)
     logo_url = models.URLField(verbose_name='Logo URL')
     description = models.TextField()
-    order = models.IntegerField(verbose_name='Category order', unique=True)
+    order = models.PositiveIntegerField(verbose_name='Category order', unique=True)
 
     class Meta:
         ordering = ['order']
