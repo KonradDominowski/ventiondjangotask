@@ -93,7 +93,7 @@ class CategoryViewSetTestCase(APITestCase):
         response = view(request, pk=self.category_1.pk)
 
         self.assertEqual(response.status_code, 204)
-        self.assertEqual(len(Category.objects.all()), 1)
+        self.assertEqual(Category.objects.count(), 1)
 
 
 class TaskViewSetTestCase(APITestCase):
@@ -191,4 +191,4 @@ class TaskViewSetTestCase(APITestCase):
         response = view(request, pk=self.task_1.pk)
 
         self.assertEqual(response.status_code, 204)
-        self.assertEqual(len(Task.objects.all()), 1)
+        self.assertEqual(Task.objects.count(), 1)

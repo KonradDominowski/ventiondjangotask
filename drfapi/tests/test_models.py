@@ -43,7 +43,6 @@ class CategoryTestCase(TestCase):
         self.assertEqual(queryset[3].order, 4)
 
     def test_order_is_unique(self):
-        """Test if category order is unique"""
         with self.assertRaises(IntegrityError):
             Category.objects.create(name='Test category 3',
                                     logo_url='https://picsum.photos/200/300',

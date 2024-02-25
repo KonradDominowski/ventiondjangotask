@@ -59,3 +59,12 @@ The app has two models:
 8. You can now view the app in http://0.0.0.0:8000 in your browser.
 
 After this initial setup you can start the app again simply by using the `docker compose up` command.
+
+
+## Tests
+
+The app comes with unit tests for models and views. Run the command to run tests: 
+
+```
+python manage.py test
+```
